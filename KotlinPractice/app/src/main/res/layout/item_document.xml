@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="@dimen/spacing_tiny">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/shape_attachment_border_background"
+        android:padding="@dimen/spacing_tiny">
+
+        <View
+            android:id="@+id/pdf"
+            android:layout_width="@dimen/documentWidth"
+            android:layout_height="@dimen/documentHeight"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/pdfIcon"
+            android:background="@color/teal_700"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/pdfIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@id/pdf"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:src="@drawable/ic_pdf"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/pdfname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/pdfName"
+            app:layout_constraintStart_toEndOf="@id/pdfIcon"
+            app:layout_constraintTop_toTopOf="@id/pdfIcon"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/pdfDetail"
+            app:layout_constraintStart_toEndOf="@id/pdfIcon"
+            app:layout_constraintTop_toBottomOf="@id/pdfname"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- font sizes -->
+    <dimen name="font_xlarge">24sp</dimen>
+    <dimen name="font_large">20sp</dimen>
+    <dimen name="font_normal">16sp</dimen>
+    <dimen name="font_small">12sp</dimen>
+
+    <!-- spacing between two views -->
+    <dimen name="spacing_huge">32dp</dimen>
+    <dimen name="spacing_very_large">28dp</dimen>
+    <dimen name="spacing_large">24dp</dimen>
+    <dimen name="spacing_normal">20dp</dimen>
+    <dimen name="spacing_small">16dp</dimen>
+    <dimen name="spacing_very_small">12dp</dimen>
+    <dimen name="spacing_tiny">8dp</dimen>
+    <dimen name="spacing_view">4dp</dimen>
+
+    <dimen name="zero">0dp</dimen>
+    <dimen name="border">2dp</dimen>
+    <dimen name="fragment_authentication_size">200dp</dimen>
+
+    <!--  Stock Exchange Dimensions  -->
+    <dimen name="constraintLayoutPadding">5dp</dimen>
+    <dimen name="imageButtonPadding">10dp</dimen>
+    <dimen name="imageButtonMarginEnd">10dp</dimen>
+    <dimen name="minTextSize">11sp</dimen>
+    <dimen name="tabMargin">10dp</dimen>
+    <dimen name="textViewMargin">10dp</dimen>
+    <dimen name="textViewMarginEnd">10dp</dimen>
+    <dimen name="viewWidth">0dp</dimen>
+    <dimen name="viewHeight">1dp</dimen>
+    <dimen name="viewMarginTop">20dp</dimen>
+    <dimen name="viewLayoutMargin">5dp</dimen>
+    <dimen name="cardViewMargin">10dp</dimen>
+    <dimen name="textviewYouExchangeMargin">5dp</dimen>
+    <dimen name="spinnerMarginTop">10dp</dimen>
+    <dimen name="spinnerPadding">13dp</dimen>
+    <dimen name="constraintLayoutMarginEnd">5dp</dimen>
+    <dimen name="constraintLayoutPaddingStockPrice">15dp</dimen>
+    <dimen name="imageViewMarginStartEnd">5dp</dimen>
+    <dimen name="imageViewPadding">5dp</dimen>
+    <dimen name="textViewPadding">10dp</dimen>
+    <dimen name="textViewMarginTop">10dp</dimen>
+    <dimen name="textViewPriceEuroMarginLeft">50dp</dimen>
+    <dimen name="FinalExchangePriceMargin">10dp</dimen>
+    <dimen name="FinalExchangePricePadding">20dp</dimen>
+    <dimen name="textViewExchangeFocusTextMargin">5dp</dimen>
+    <dimen name="bottomNavigationMargin">16dp</dimen>
+    <dimen name="imageWidth">200dp</dimen>
+    <dimen name="imageHeight">300dp</dimen>
+    <dimen name="maxEditTextHeight">100dp</dimen>
+    <dimen name="dialogHeight">100dp</dimen>
+    <dimen name="itemMusicWidth">100dp</dimen>
+    <dimen name="dividerHeight">2dp</dimen>
+    <dimen name="profileSize">70dp</dimen>
+    <dimen name="dividerWidth">200dp</dimen>
+    <dimen name="documentWidth">300dp</dimen>
+    <dimen name="documentHeight">50dp</dimen>
+    <dimen name="locationHeight">400dp</dimen>
+</resources>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="@dimen/spacing_tiny">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/shape_attachment_border_background"
+        android:padding="@dimen/spacing_tiny">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/contactProfile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_person"
+            app:layout_constraintStart_toStartOf="@id/divider"
+            app:layout_constraintTop_toTopOf="parent"
+            android:padding="@dimen/spacing_tiny"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/contactProfile"
+            android:text="@string/thomas"
+            android:textColor="@color/blue"
+            app:layout_constraintTop_toTopOf="@id/contactProfile"
+            app:layout_constraintBottom_toBottomOf="@id/contactProfile"
+            android:layout_marginStart="@dimen/spacing_view"/>
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="@dimen/dividerWidth"
+            android:layout_height="@dimen/dividerHeight"
+            android:background="@color/darkGray"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/contactProfile"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/contactProfile"
+            android:text="@string/message"
+            android:textStyle="bold"
+            android:textColor="@color/blue"
+            app:layout_constraintTop_toBottomOf="@id/divider"
+            app:layout_constraintStart_toStartOf="@id/divider"
+            app:layout_constraintEnd_toEndOf="@id/divider"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

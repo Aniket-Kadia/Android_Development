@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/imgProfile"
+        android:layout_width="@dimen/profileSize"
+        android:layout_height="@dimen/profileSize"
+        android:layout_marginTop="@dimen/spacing_tiny"
+        android:layout_marginBottom="@dimen/spacing_tiny"
+        android:layout_marginStart="@dimen/spacing_small"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlayImage"/>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/font_normal"
+        android:textStyle="bold"
+        android:fontFamily="@font/roboto_bold"
+        android:textColor="@color/black"
+        android:layout_marginStart="@dimen/spacing_tiny"
+        app:layout_constraintTop_toTopOf="@id/imgProfile"
+        app:layout_constraintStart_toEndOf="@id/imgProfile"
+        app:layout_constraintBottom_toBottomOf="@id/imgProfile"
+        app:layout_constraintVertical_bias="0.2"/>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_lastMessage"
+        android:layout_width="@dimen/zero"
+        android:layout_height="wrap_content"
+        android:maxLines="1"
+        android:layout_marginStart="@dimen/spacing_tiny"
+        android:layout_marginEnd="@dimen/spacing_tiny"
+        android:textSize="@dimen/font_normal"
+        app:layout_constraintTop_toBottomOf="@id/tv_name"
+        app:layout_constraintBottom_toBottomOf="@id/imgProfile"
+        app:layout_constraintStart_toEndOf="@id/imgProfile"
+        app:layout_constraintEnd_toStartOf="@id/time"/>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/unseenChatCount"
+        android:layout_width="@dimen/zero"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_view"
+        android:layout_marginEnd="@dimen/spacing_tiny"
+        android:textSize="@dimen/font_normal"
+        android:padding="@dimen/spacing_view"
+        android:textStyle="bold"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/tv_lastMessage"
+        app:layout_constraintTop_toTopOf="@id/tv_lastMessage"
+        android:background="@drawable/shape_chat_count_background"
+        app:layout_constraintDimensionRatio="1:1"/>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_view"
+        android:layout_marginEnd="@dimen/spacing_tiny"
+        android:textSize="@dimen/font_normal"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tv_name" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="authenticationTab">
+        <item>Email</item>
+        <item>Phone</item>
+    </string-array>
+
+    <string-array name="stock_list">
+        <item>AVAX</item>
+        <item>LINK</item>
+        <item>SHIB</item>
+        <item>SFP</item>
+    </string-array>
+</resources>

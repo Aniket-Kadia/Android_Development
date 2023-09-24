@@ -1,0 +1,498 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/geminiAppBackground"
+    android:padding="@dimen/constraintLayoutPadding"
+    tools:context=".uiwidgets.StockExchangeActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbarGemini"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/darkGray"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:titleTextColor="@color/white">
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/imgBtnLayer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shape_img_btn_border"
+                android:clickable="true"
+                android:contentDescription="@string/layerImages"
+                android:padding="@dimen/imageButtonPadding"
+                app:srcCompat="@drawable/ic_layers"
+                app:tint="@color/brown" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:letterSpacing="01"
+                android:text="@string/title_gemini"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
+            <ImageButton
+                android:id="@+id/imgBtnNotification"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginEnd="@dimen/imageButtonMarginEnd"
+                android:background="@drawable/shape_img_btn_border"
+                android:contentDescription="@string/layerImages"
+                android:padding="@dimen/imageButtonPadding"
+                app:srcCompat="@drawable/ic_outline_notifications"
+                app:tint="@color/brown" />
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabForApp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/tabMargin"
+            android:background="@color/darkGray"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/toolbarGemini"
+            app:tabBackground="@drawable/selector_tab_stock_background"
+            app:tabGravity="start"
+            app:tabIndicatorHeight="@dimen/zero"
+            app:tabSelectedTextColor="@color/white"
+            app:tabTextColor="@color/lightGray">
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/limit" />
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/market" />
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/pool" />
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/info" />
+        </com.google.android.material.tabs.TabLayout>
+
+        <TextView
+            android:id="@+id/textViewExchange"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/textViewMargin"
+            android:text="@string/exchange"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tabForApp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/textViewMarginEnd"
+            android:text="@string/date"
+            android:textColor="@color/lightGray"
+            app:layout_constraintBottom_toBottomOf="@id/textViewExchange"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <View
+            android:id="@+id/lineViewAfterExchange"
+            android:layout_width="@dimen/viewWidth"
+            android:layout_height="@dimen/viewHeight"
+            android:layout_marginTop="@dimen/viewMarginTop"
+            android:background="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textViewExchange" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/cardViewMargin"
+            app:cardBackgroundColor="@color/geminiAppBackground"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/lineViewAfterExchange">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shape_card_stock_background"
+                android:padding="@dimen/constraintLayoutPadding">
+
+                <TextView
+                    android:id="@+id/textviewYouExchange"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/textviewYouExchangeMargin"
+                    android:text="@string/you_exchange"
+                    android:textColor="@color/lightGray"
+                    android:textSize="11sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <Spinner
+                    android:id="@+id/spinner_Stock"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spinnerMarginTop"
+                    android:background="@drawable/shape_img_btn_border"
+                    android:padding="@dimen/spinnerPadding"
+                    app:layout_constraintStart_toStartOf="@id/textviewYouExchange"
+                    app:layout_constraintTop_toBottomOf="@id/textviewYouExchange" />
+
+                <View
+                    android:layout_width="@dimen/zero"
+                    android:layout_height="@dimen/viewHeight"
+                    android:layout_margin="@dimen/viewLayoutMargin"
+                    android:background="@color/white"
+                    app:layout_constraintBottom_toBottomOf="@id/spinner_Stock"
+                    app:layout_constraintEnd_toStartOf="@id/layoutForPriceExchange"
+                    app:layout_constraintStart_toEndOf="@id/spinner_Stock"
+                    app:layout_constraintTop_toTopOf="@id/spinner_Stock" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layoutForPriceExchange"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/constraintLayoutMarginEnd"
+                    android:background="@drawable/shape_img_btn_border"
+                    android:padding="@dimen/constraintLayoutPaddingStockPrice"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/spinner_Stock">
+
+                    <ImageView
+                        android:id="@+id/imgPlus"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/imageViewMarginStartEnd"
+                        android:padding="@dimen/imageViewPadding"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/ic_plus" />
+
+                    <TextView
+                        android:id="@+id/priceExchange"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/textViewPadding"
+                        android:text="@string/exchange_price"
+                        android:textColor="@color/white"
+                        app:layout_constraintBottom_toBottomOf="@id/imgPlus"
+                        app:layout_constraintStart_toEndOf="@id/imgPlus"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/imgMinus"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/imageViewMarginStartEnd"
+                        android:padding="@dimen/imageViewPadding"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/priceExchange"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/ic_minus" />
+
+                    <TextView
+                        android:id="@+id/textViewPrice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/price"
+                        android:textColor="@color/lightGray"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/imgPlus" />
+
+                    <TextView
+                        android:id="@+id/textViewPriceDetail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/exchangePriceValue"
+                        android:textColor="@color/lightGray"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/imgMinus" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/textViewMarginTop"
+                    android:text="@string/increaseValue"
+                    android:textColor="@color/white"
+                    app:drawableStartCompat="@drawable/ic_filled_triangle_up"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/spinner_Stock" />
+
+                <View
+                    android:id="@+id/lineView"
+                    android:layout_width="@dimen/zero"
+                    android:layout_height="@dimen/viewHeight"
+                    android:layout_marginTop="@dimen/viewMarginTop"
+                    android:background="@color/white"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/layoutForPriceExchange" />
+
+                <ImageView
+                    android:id="@+id/imgUpDownArrow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/convert"
+                    android:src="@drawable/ic_up_down_arrow"
+                    app:layout_constraintBottom_toBottomOf="@id/lineView2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/lineView" />
+
+                <View
+                    android:id="@+id/lineView2"
+                    android:layout_width="@dimen/zero"
+                    android:layout_height="@dimen/viewHeight"
+                    android:layout_marginTop="@dimen/viewMarginTop"
+                    android:background="@color/white"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/imgUpDownArrow" />
+
+                <TextView
+                    android:id="@+id/textViewYouReceive"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/textViewMargin"
+                    android:layout_marginTop="@dimen/textViewMargin"
+                    android:text="@string/you_receive"
+                    android:textColor="@color/lightGray"
+                    android:textSize="11sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/lineView2" />
+
+                <Spinner
+                    android:id="@+id/spinner_Stock2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spinnerMarginTop"
+                    android:background="@drawable/shape_img_btn_border"
+                    android:padding="@dimen/spinnerPadding"
+                    app:layout_constraintStart_toStartOf="@id/textViewYouReceive"
+                    app:layout_constraintTop_toBottomOf="@id/textViewYouReceive" />
+
+                <View
+                    android:layout_width="@dimen/zero"
+                    android:layout_height="@dimen/viewHeight"
+                    android:layout_margin="@dimen/viewLayoutMargin"
+                    android:background="@color/white"
+                    app:layout_constraintBottom_toBottomOf="@id/spinner_Stock2"
+                    app:layout_constraintEnd_toStartOf="@id/layoutForPriceReceive"
+                    app:layout_constraintStart_toEndOf="@id/spinner_Stock2"
+                    app:layout_constraintTop_toTopOf="@id/spinner_Stock2" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layoutForPriceReceive"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/shape_img_btn_border"
+                    android:padding="@dimen/constraintLayoutPaddingStockPrice"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/spinner_Stock2">
+
+                    <ImageView
+                        android:id="@+id/imgPlusReceive"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/imageViewMarginStartEnd"
+                        android:contentDescription="@string/receive_price_increase"
+                        android:padding="@dimen/imageViewPadding"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/ic_plus" />
+
+                    <TextView
+                        android:id="@+id/priceExchangeReceive"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/textViewPadding"
+                        android:text="@string/receivePrice"
+                        android:textColor="@color/white"
+                        app:layout_constraintBottom_toBottomOf="@id/imgPlusReceive"
+                        app:layout_constraintStart_toEndOf="@id/imgPlusReceive"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/imgMinusReceive"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/imageViewMarginStartEnd"
+                        android:contentDescription="@string/receive_price_decrease"
+                        android:padding="@dimen/imageViewPadding"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/priceExchangeReceive"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/ic_minus" />
+
+                    <TextView
+                        android:id="@+id/textViewPriceReceive"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/price"
+                        android:textColor="@color/lightGray"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/imgPlusReceive" />
+
+                    <TextView
+                        android:id="@+id/textViewPriceDetailReceive"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/receivePriceValue"
+                        android:textColor="@color/lightGray"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/imgMinusReceive" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/textViewMarginTop"
+                    android:text="@string/decreaseValue"
+                    android:textColor="@color/white"
+                    app:drawableStartCompat="@drawable/ic_filled_triangle_down"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/spinner_Stock2" />
+
+                <View
+                    android:id="@+id/lineView3"
+                    android:layout_width="@dimen/zero"
+                    android:layout_height="@dimen/viewHeight"
+                    android:layout_marginTop="@dimen/viewMarginTop"
+                    android:background="@color/white"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/layoutForPriceReceive" />
+
+                <TextView
+                    android:id="@+id/textViewTransactionCost"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/textViewMarginTop"
+                    android:text="@string/transaction_cost"
+                    android:textColor="@color/lightGray"
+                    android:textSize="11sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/lineView3" />
+
+                <TextView
+                    android:id="@+id/textViewPriceEuro"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/textViewPriceEuroMarginLeft"
+                    android:layout_marginTop="@dimen/textViewMarginTop"
+                    android:text="@string/transactionCostValue"
+                    android:textColor="@color/lightGray"
+                    android:textSize="11sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/lineView3" />
+
+                <TextView
+                    android:id="@+id/textViewPriceWithImg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/textViewMarginTop"
+                    android:gravity="center_vertical"
+                    android:text="@string/stockPrice"
+                    android:textColor="@color/brown"
+                    android:textSize="11sp"
+                    app:drawableStartCompat="@drawable/ic_triangle"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/lineView3" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/Categories"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/textViewMarginTop"
+            android:text="@string/ma_ema_boll"
+            android:textColor="@color/lightGray"
+            android:textSize="@dimen/minTextSize"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cardView" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/FinalExchangePriceMargin"
+            android:background="@drawable/shape_card_stock_background"
+            android:padding="@dimen/FinalExchangePricePadding"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/Categories">
+
+            <TextView
+                android:id="@+id/textViewExchangeFor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/exchange_for"
+                android:textColor="@color/white"
+                android:textSize="@dimen/minTextSize"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@id/textViewExchangeFocusText"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textViewExchangeFocusText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/textViewExchangeFocusTextMargin"
+                android:layout_marginEnd="@dimen/textViewExchangeFocusTextMargin"
+                android:background="@color/white"
+                android:text="@string/exchangeForValue"
+                android:textColor="@color/black"
+                android:textSize="@dimen/minTextSize"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@id/textViewLink"
+                app:layout_constraintStart_toEndOf="@id/textViewExchangeFor"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textViewLink"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/link"
+                android:textColor="@color/white"
+                android:textSize="@dimen/minTextSize"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/textViewExchangeFocusText"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

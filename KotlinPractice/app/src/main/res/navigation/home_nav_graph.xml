@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/home_nav_graph.xml"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.myapplication.messaging.fragment.HomeFragment"
+        android:label="HomeFragment" >
+        <action
+            android:id="@+id/action_homeFragment_to_personalChatFragment"
+            app:destination="@id/personalChatFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/personalChatFragment"
+        android:name="com.example.myapplication.messaging.fragment.PersonalChatFragment"
+        android:label="PersonalChatFragment" >
+        <argument
+            android:name="chatID"
+            app:argType="integer" />
+    </fragment>
+</navigation>
